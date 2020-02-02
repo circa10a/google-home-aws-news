@@ -8,7 +8,6 @@ services:
 
 script:
   - go vet ./...
-  - make test
 
 before_deploy: |
   if [  ! -f /tmp/tagged ]; then

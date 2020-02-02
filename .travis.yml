@@ -1,14 +1,10 @@
 language: go
-
 go:
-  - '1.13'
-
+- '1.13'
 services:
-  - docker
-
+- docker
 script:
-  - go vet ./...
-
+- go vet ./...
 before_deploy: |
   if [  ! -f /tmp/tagged ]; then
     git config --local user.name "$USERNAME"
@@ -22,11 +18,10 @@ before_deploy: |
     # Update go report card
     curl -X POST -F "repo=github.com/${TRAVIS_REPO_SLUG}" https://goreportcard.com/checks
   fi
-
 deploy:
   provider: releases
   api_key:
-    secure: ou1LhVB+FXEUEQ2eYX4jfZOV58l3pALRXgCITLYCEjF/TPZMePL5K9kKDjcnGUmyaNQPVm1NYplexBGfxQGf5D/9q3CxssckiP5kYkXehdQyvUIoi9MrLs3GotOq3W8ewiCHRS5P56UsLB+iJ1lv9xKbDed1+WB6/UlkeEZgKasHGGJYhUyId+lGtW0Szd50j5kx6c9/35+Eh7g+WHhoxejY+Gcv0Ln/EIVxFjn6k5I+oiiL2LV1AVjs7+JyPWN42ZN/W0wnpoaWWa0w3/dCDDuXpacRyvkOAV7OMcK+irqA/SEySv605IMinmRb2Pu3rYqcxxemakvG4FYErSBshjmCjEXS4E4HT15Qb4AapMby1lPO7U1qaQ1+ML9u0W9n0/44G4k9CWNm++EHdkGd6bz/MMoTWmzkFRiwnsmCF5EugCWLT7fsqAbUyBu1w6vfB3FqTA9rdlKwCBtuzDsvCtvcmSJhd+YiWd7OEMDY+0qE1B33gp7FelAWdgPcExNI6IzzHhCYz1qECS+t7QH//U/Y93pKg2GcfssKDk8YlXCS7yK3E20PnFM4JXoTdvgJeP1Q+3ZXfv88v3WF/mFRSfW6IhxJbsAN8da47Sa/wJ11Pyaftf+w61BcGMmSp9S15Ga002sSnsRure6VJEvPy7flXOvKp0KSl5C3eMHaXSU=
+    secure: mEMarcXKXNOBfVqd6W6ihT+8YOIgMd7S4R0YmgxLhxwG+JX5rUsQRXEjHDqpwb1nUrQNB57tWHuvFwCzw9cchfckf/38kHmjNLXjMzBuXXS5hk9wvyofbE39kROrRqLMx9v0pp3wk00wjZN5OwsGqGfKgO3SxthoK5aja3zrDT8sdc/TfZgVU25U4f5dK3MjNRxXxWBumgxhYg8Uv64CKlX2dzARUWH2SfZflgLIH6kk/Ab+xSAeZ0M+rld0tme1Teg1BDdCTVMe9/oc5N0esffPyFxou3x26NgctM992a3PtUfETq/vB6PZnDepFBPHn/gRUt2Tqf3bZlThmXT/5mAXBaK1AYHQWr19c+tnaSvqaGDVoG0yf5RPcMhz5soji+sECU/4Su1jYF6ASvziAoI1eU+2iaYv7bx1k4FLfp0dYuvBTzc3wPmrb0WPsuckU05M/Oe6zKTnpcfClaZoftS49PTBNufDXEyOPdxOU9WLlkTCmtq9Sk+SUKK+2xGUxr6qgT4VNiuLPCiflBrpOOLlD3Y//yX/W43wWqWtRXDQsgKJXN/OGUp3vZaciCm33b59cNT9zuDzzrktMAXMGAx8hdZY6og9WVg7gcuHoTF3pJYWq/cbt1/cW8LA8DjGDhFqxTxRgIWuJIfbmAGcET2GBZHDNODzo0Zd/ubnW0o=
   file: bin/*.*
   on:
     branch: master

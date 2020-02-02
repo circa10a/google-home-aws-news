@@ -19,7 +19,7 @@ func newsStatement(n []ListItem) string {
 func newsListItems() []ListItem {
 	var newsItems []ListItem
 	news, _ := awsnews.Fetch(2020, 01)
-	for i, newsItem := range news {
+	for i, newsItem := range news[:30] {
 		itemInfo := ListItem{
 			Title:       newsItem.Title,
 			Description: newsItem.PostDate,

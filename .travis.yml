@@ -1,0 +1,33 @@
+language: go
+
+go:
+  - '1.13'
+
+services:
+  - docker
+
+script:
+  - go vet ./...
+  - make test
+
+before_deploy: |
+  if [  ! -f /tmp/tagged ]; then
+    git config --local user.name "$USERNAME"
+    git config --local user.email "$EMAIL"
+    # Compile Binaries
+    make release
+    export TRAVIS_TAG=$(grep -o "[0-9]\.[0-9]\.[0-9]"  Makefile)
+    export TRAVIS_ARTIFACT=$(ls *.tar.gz)
+    # Tag
+    git tag $TRAVIS_TAG && touch /tmp/tagged
+    # Update go report card
+    curl -X POST -F "repo=github.com/${TRAVIS_REPO_SLUG}" https://goreportcard.com/checks
+  fi
+
+deploy:
+  provider: releases
+  api_key:
+    secure: ou1LhVB+FXEUEQ2eYX4jfZOV58l3pALRXgCITLYCEjF/TPZMePL5K9kKDjcnGUmyaNQPVm1NYplexBGfxQGf5D/9q3CxssckiP5kYkXehdQyvUIoi9MrLs3GotOq3W8ewiCHRS5P56UsLB+iJ1lv9xKbDed1+WB6/UlkeEZgKasHGGJYhUyId+lGtW0Szd50j5kx6c9/35+Eh7g+WHhoxejY+Gcv0Ln/EIVxFjn6k5I+oiiL2LV1AVjs7+JyPWN42ZN/W0wnpoaWWa0w3/dCDDuXpacRyvkOAV7OMcK+irqA/SEySv605IMinmRb2Pu3rYqcxxemakvG4FYErSBshjmCjEXS4E4HT15Qb4AapMby1lPO7U1qaQ1+ML9u0W9n0/44G4k9CWNm++EHdkGd6bz/MMoTWmzkFRiwnsmCF5EugCWLT7fsqAbUyBu1w6vfB3FqTA9rdlKwCBtuzDsvCtvcmSJhd+YiWd7OEMDY+0qE1B33gp7FelAWdgPcExNI6IzzHhCYz1qECS+t7QH//U/Y93pKg2GcfssKDk8YlXCS7yK3E20PnFM4JXoTdvgJeP1Q+3ZXfv88v3WF/mFRSfW6IhxJbsAN8da47Sa/wJ11Pyaftf+w61BcGMmSp9S15Ga002sSnsRure6VJEvPy7flXOvKp0KSl5C3eMHaXSU=
+  file: bin/*.*
+  on:
+    branch: master

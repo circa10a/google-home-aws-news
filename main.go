@@ -13,7 +13,7 @@ func newsStatement(n []ListItem) string {
 	if len(n) == 0 {
 		return "No news from A.W.S yet."
 	}
-	return "Here's the latest A.W.S news"
+	return "Here's the latest A.W.S news."
 }
 
 func newsListItems() []ListItem {

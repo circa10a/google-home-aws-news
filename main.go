@@ -18,7 +18,7 @@ func newsStatement(n []ListItem) string {
 
 func newsListItems() []ListItem {
 	var newsItems []ListItem
-	news, _ := awsnews.ThisMonth()
+	news, _ := awsnews.Fetch(2020, 01)
 	for i, newsItem := range news {
 		itemInfo := ListItem{
 			Title:       newsItem.Title,
@@ -29,7 +29,7 @@ func newsListItems() []ListItem {
 			},
 			OptionInfo: OptionInfo{
 				Key:      fmt.Sprintf("NEWS_ITEM_%v", i),
-				Synonyms: []string{"cloud", "AWS"},
+				Synonyms: []string{},
 			},
 		}
 		newsItems = append(newsItems, itemInfo)

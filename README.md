@@ -16,6 +16,10 @@ _Powered by [go-aws-news](https://github.com/circa10a/go-aws-news)_
 - "OK Google, Give me news on AWS"
 - "OK Google, Give me AWS news"
 
+### Example View
+
+<p align="center"><img src="https://i.imgur.com/DPptjwM.png" width="30%" height="30%" /></p>
+
 ## Configuration
 
 |             |                                                                       |                      |                        |           |               |

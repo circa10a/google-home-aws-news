@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"net/http"
 
 	awsnews "github.com/circa10a/go-aws-news/news"
@@ -9,27 +8,27 @@ import (
 	log "github.com/sirupsen/logrus"
 )
 
-func newsStatement(n []ListItem) string {
+func newsStatement(n []CarouselItem) string {
 	if len(n) == 0 {
 		return "No news from A.W.S yet."
 	}
 	return "Here's the latest A.W.S news."
 }
 
-func newsListItems() []ListItem {
-	var newsItems []ListItem
+func newsListItems() []CarouselItem {
+	var newsItems []CarouselItem
 	news, _ := awsnews.Fetch(2020, 01)
-	for i, newsItem := range news[:30] {
-		itemInfo := ListItem{
+	for _, newsItem := range news[:10] {
+		itemInfo := CarouselItem{
 			Title:       newsItem.Title,
 			Description: newsItem.PostDate,
+			OpenURLAction: OpenURLAction{
+				URL: newsItem.Link,
+			},
+			Footer: newsItem.PostDate,
 			Image: Image{
 				URL:               "https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png",
 				AccessibilityText: newsItem.Title,
-			},
-			OptionInfo: OptionInfo{
-				Key:      fmt.Sprintf("NEWS_ITEM_%v", i),
-				Synonyms: []string{},
 			},
 		}
 		newsItems = append(newsItems, itemInfo)
@@ -44,16 +43,6 @@ func buildFulfillment() *Response {
 		Payload{
 			Google{
 				ExpectUserResponse: false,
-				SystemIntent: SystemIntent{
-					Intent: "actions.intent.OPTION",
-					Data: Data{
-						Type: "type.googleapis.com/google.actions.v2.OptionValueSpec",
-						ListSelect: ListSelect{
-							Title: "AWS News",
-							Items: news,
-						},
-					},
-				},
 				RichResponse: RichResponse{
 					Items: []Items{
 						{
@@ -62,6 +51,9 @@ func buildFulfillment() *Response {
 							},
 						},
 					},
+				},
+				CarouselBrowse: CarouselBrowse{
+					Items: news,
 				},
 			},
 		},

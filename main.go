@@ -25,7 +25,6 @@ func newsListItems() []CarouselItem {
 			OpenURLAction: OpenURLAction{
 				URL: newsItem.Link,
 			},
-			Footer: newsItem.PostDate,
 			Image: Image{
 				URL:               "https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png",
 				AccessibilityText: newsItem.Title,

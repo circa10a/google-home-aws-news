@@ -17,7 +17,6 @@ type CarouselItem struct {
 	Title         string        `json:"title"`
 	OpenURLAction OpenURLAction `json:"openUrlAction"`
 	Description   string        `json:"description"`
-	Footer        string        `json:"footer"`
 	Image         Image         `json:"image"`
 }
 

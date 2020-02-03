@@ -34,13 +34,13 @@ type Items struct {
 }
 
 type RichResponse struct {
-	Items []Items `json:"items"`
+	Items          []Items        `json:"items"`
+	CarouselBrowse CarouselBrowse `json:"carouselBrowse"`
 }
 
 type Google struct {
-	ExpectUserResponse bool           `json:"expectUserResponse"`
-	RichResponse       RichResponse   `json:"richResponse"`
-	CarouselBrowse     CarouselBrowse `json:"carouselBrowse"`
+	ExpectUserResponse bool         `json:"expectUserResponse"`
+	RichResponse       RichResponse `json:"richResponse"`
 }
 
 type Payload struct {

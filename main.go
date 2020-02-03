@@ -51,9 +51,9 @@ func buildFulfillment() *Response {
 							},
 						},
 					},
-				},
-				CarouselBrowse: CarouselBrowse{
-					Items: news,
+					CarouselBrowse: CarouselBrowse{
+						Items: news,
+					},
 				},
 			},
 		},

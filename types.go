@@ -4,9 +4,8 @@ type Response struct {
 	Payload Payload `json:"payload"`
 }
 
-type OptionInfo struct {
-	Key      string   `json:"key"`
-	Synonyms []string `json:"synonyms"`
+type OpenURLAction struct {
+	URL string `json:"url"`
 }
 
 type Image struct {
@@ -14,26 +13,16 @@ type Image struct {
 	AccessibilityText string `json:"accessibilityText"`
 }
 
-type ListItem struct {
-	OptionInfo  OptionInfo `json:"optionInfo"`
-	Description string     `json:"description"`
-	Image       Image      `json:"image"`
-	Title       string     `json:"title"`
+type CarouselItem struct {
+	Title         string        `json:"title"`
+	OpenURLAction OpenURLAction `json:"openUrlAction"`
+	Description   string        `json:"description"`
+	Footer        string        `json:"footer"`
+	Image         Image         `json:"image"`
 }
 
-type ListSelect struct {
-	Title string     `json:"title"`
-	Items []ListItem `json:"items"`
-}
-
-type Data struct {
-	Type       string     `json:"@type"`
-	ListSelect ListSelect `json:"listSelect"`
-}
-
-type SystemIntent struct {
-	Intent string `json:"intent"`
-	Data   Data   `json:"data"`
+type CarouselBrowse struct {
+	Items []CarouselItem `json:"items"`
 }
 
 type SimpleResponse struct {
@@ -49,9 +38,9 @@ type RichResponse struct {
 }
 
 type Google struct {
-	ExpectUserResponse bool         `json:"expectUserResponse"`
-	SystemIntent       SystemIntent `json:"systemIntent"`
-	RichResponse       RichResponse `json:"richResponse"`
+	ExpectUserResponse bool           `json:"expectUserResponse"`
+	RichResponse       RichResponse   `json:"richResponse"`
+	CarouselBrowse     CarouselBrowse `json:"carouselBrowse"`
 }
 
 type Payload struct {

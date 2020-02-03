@@ -29,13 +29,13 @@ type SimpleResponse struct {
 	TextToSpeech string `json:"textToSpeech"`
 }
 
-type Items struct {
-	SimpleResponse SimpleResponse `json:"simpleResponse"`
-	CarouselBrowse CarouselBrowse `json:"carouselBrowse"`
+type Item struct {
+	SimpleResponse SimpleResponse `json:"simpleResponse,omitempty"`
+	CarouselBrowse CarouselBrowse `json:"carouselBrowse,omitempty"`
 }
 
 type RichResponse struct {
-	Items []Items `json:"items"`
+	Items []Item `json:"items,omitempty"`
 }
 
 type Google struct {

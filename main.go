@@ -44,12 +44,14 @@ func buildFulfillment() *Response {
 			Google{
 				ExpectUserResponse: false,
 				RichResponse: RichResponse{
-					Items: []Items{
+					Items: []Item{
 						{
-							SimpleResponse{
+							SimpleResponse: SimpleResponse{
 								TextToSpeech: newsStatement(news),
 							},
-							CarouselBrowse{
+						},
+						{
+							CarouselBrowse: CarouselBrowse{
 								Items: news,
 							},
 						},

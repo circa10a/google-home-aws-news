@@ -31,11 +31,11 @@ type SimpleResponse struct {
 
 type Items struct {
 	SimpleResponse SimpleResponse `json:"simpleResponse"`
+	CarouselBrowse CarouselBrowse `json:"carouselBrowse"`
 }
 
 type RichResponse struct {
-	Items          []Items        `json:"items"`
-	CarouselBrowse CarouselBrowse `json:"carouselBrowse"`
+	Items []Items `json:"items"`
 }
 
 type Google struct {

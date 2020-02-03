@@ -49,10 +49,10 @@ func buildFulfillment() *Response {
 							SimpleResponse{
 								TextToSpeech: newsStatement(news),
 							},
+							CarouselBrowse{
+								Items: news,
+							},
 						},
-					},
-					CarouselBrowse: CarouselBrowse{
-						Items: news,
 					},
 				},
 			},

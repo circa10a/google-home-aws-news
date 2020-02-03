@@ -63,7 +63,7 @@ func buildFulfillment() *Response {
 }
 
 func handleWebhook(c *gin.Context) {
-	c.JSON(http.StatusOK, buildFulfillment())
+	c.PureJSON(http.StatusOK, buildFulfillment())
 }
 
 func main() {

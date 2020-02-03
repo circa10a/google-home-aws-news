@@ -22,11 +22,11 @@ type CarouselItem struct {
 }
 
 type CarouselBrowse struct {
-	Items []CarouselItem `json:"items"`
+	Items []CarouselItem `json:"items,omitempty"`
 }
 
 type SimpleResponse struct {
-	TextToSpeech string `json:"textToSpeech"`
+	TextToSpeech string `json:"textToSpeech,omitempty"`
 }
 
 type Item struct {
@@ -40,7 +40,7 @@ type RichResponse struct {
 
 type Google struct {
 	ExpectUserResponse bool         `json:"expectUserResponse"`
-	RichResponse       RichResponse `json:"richResponse"`
+	RichResponse       RichResponse `json:"richResponse,omitempty"`
 }
 
 type Payload struct {

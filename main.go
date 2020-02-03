@@ -46,12 +46,12 @@ func buildFulfillment() *Response {
 				RichResponse: RichResponse{
 					Items: []Item{
 						{
-							SimpleResponse: SimpleResponse{
+							SimpleResponse: &SimpleResponse{
 								TextToSpeech: newsStatement(news),
 							},
 						},
 						{
-							CarouselBrowse: CarouselBrowse{
+							CarouselBrowse: &CarouselBrowse{
 								Items: news,
 							},
 						},
@@ -63,7 +63,7 @@ func buildFulfillment() *Response {
 }
 
 func handleWebhook(c *gin.Context) {
-	c.JSONP(http.StatusOK, buildFulfillment())
+	c.JSON(http.StatusOK, buildFulfillment())
 }
 
 func main() {

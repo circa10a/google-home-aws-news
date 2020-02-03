@@ -30,8 +30,8 @@ type SimpleResponse struct {
 }
 
 type Item struct {
-	SimpleResponse SimpleResponse `json:"simpleResponse,omitempty"`
-	CarouselBrowse CarouselBrowse `json:"carouselBrowse,omitempty"`
+	SimpleResponse *SimpleResponse `json:"simpleResponse,omitempty"`
+	CarouselBrowse *CarouselBrowse `json:"carouselBrowse,omitempty"`
 }
 
 type RichResponse struct {

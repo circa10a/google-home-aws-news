@@ -11,8 +11,6 @@ _Powered by [go-aws-news](https://github.com/circa10a/go-aws-news)_
 
 ## Usage
 
-- "OK Google, What is the latest cloud computing news"
-- "OK Google, Give me news about cloud computing"
 - "OK Google, Give me cloud computing news"
 
 ### Example View

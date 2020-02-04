@@ -11,14 +11,13 @@ _Powered by [go-aws-news](https://github.com/circa10a/go-aws-news)_
 
 ## Usage
 
-- "OK Google, Show me the latest AWS announcements"
-- "OK Google, Latest news about AWS"
-- "OK Google, Give me news on AWS"
-- "OK Google, Give me AWS news"
+- "OK Google, What is the latest cloud computing news"
+- "OK Google, Give me news about cloud computing"
+- "OK Google, Give me cloud computing news"
 
 ### Example View
 
-<p align="center"><img src="https://i.imgur.com/DPptjwM.png" width="30%" height="30%" /></p>
+<p align="center"><img src="https://i.imgur.com/UjxafOi.png" width="30%" height="30%" /></p>
 
 ## Configuration
 

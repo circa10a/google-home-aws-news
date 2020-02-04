@@ -10,9 +10,9 @@ import (
 
 func newsStatement(n []CarouselItem) string {
 	if len(n) == 0 {
-		return "No news from A.W.S yet."
+		return "No cloud computing news yet."
 	}
-	return "Here's the latest A.W.S news."
+	return "Here's the latest cloud computing news."
 }
 
 func newsListItems() []CarouselItem {
@@ -24,10 +24,6 @@ func newsListItems() []CarouselItem {
 			Description: newsItem.PostDate,
 			OpenURLAction: OpenURLAction{
 				URL: newsItem.Link,
-			},
-			Image: Image{
-				URL:               "https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png",
-				AccessibilityText: newsItem.Title,
 			},
 		}
 		newsItems = append(newsItems, itemInfo)

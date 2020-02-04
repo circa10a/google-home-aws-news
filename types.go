@@ -8,16 +8,10 @@ type OpenURLAction struct {
 	URL string `json:"url"`
 }
 
-type Image struct {
-	URL               string `json:"url"`
-	AccessibilityText string `json:"accessibilityText"`
-}
-
 type CarouselItem struct {
 	Title         string        `json:"title"`
 	OpenURLAction OpenURLAction `json:"openUrlAction"`
 	Description   string        `json:"description"`
-	Image         Image         `json:"image"`
 }
 
 type CarouselBrowse struct {

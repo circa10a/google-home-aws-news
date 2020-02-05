@@ -15,11 +15,11 @@ type CarouselItem struct {
 }
 
 type CarouselBrowse struct {
-	Items []CarouselItem `json:"items,omitempty"`
+	Items []CarouselItem `json:"items"`
 }
 
 type SimpleResponse struct {
-	TextToSpeech string `json:"textToSpeech,omitempty"`
+	TextToSpeech string `json:"textToSpeech"`
 }
 
 type Item struct {

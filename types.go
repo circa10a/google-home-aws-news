@@ -11,7 +11,7 @@ type OpenURLAction struct {
 type CarouselItem struct {
 	Title         string        `json:"title"`
 	OpenURLAction OpenURLAction `json:"openUrlAction"`
-	Description   string        `json:"description"`
+	Description   string        `json:"description,omitempty"`
 }
 
 type CarouselBrowse struct {

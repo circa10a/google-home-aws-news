@@ -18,7 +18,6 @@ func newsStatement(n []CarouselItem) string {
 func newsListItems() []CarouselItem {
 	var newsItems []CarouselItem
 	news, _ := awsnews.ThisMonth()
-	log.Info(news)
 	for _, newsItem := range news {
 		itemInfo := CarouselItem{
 			Title:       newsItem.Title,

@@ -17,10 +17,10 @@ func newsStatement(n []CarouselItem) string {
 
 func defaultNewsItem() CarouselItem {
 	return CarouselItem{
-		Title:       "No current news items.",
+		Title:       "No recent news",
 		Description: "",
 		OpenURLAction: OpenURLAction{
-			URL: "https://aws.amazon.com/new/",
+			URL: "https://aws.amazon.com/new",
 		},
 	}
 }

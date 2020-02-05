@@ -65,7 +65,7 @@ func main() {
 	var err error
 
 	r := gin.Default()
-	r.GET("/webhook", handleWebhook)
+	r.POST("/webhook", handleWebhook)
 
 	if err = r.Run(); err != nil {
 		log.WithError(err).Fatal("Couldn't start server")

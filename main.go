@@ -18,7 +18,8 @@ func newsStatement(n []CarouselItem) string {
 func newsListItems() []CarouselItem {
 	var newsItems []CarouselItem
 	news, _ := awsnews.ThisMonth()
-	for _, newsItem := range news[:10] {
+	log.Info(news)
+	for _, newsItem := range news {
 		itemInfo := CarouselItem{
 			Title:       newsItem.Title,
 			Description: newsItem.PostDate,
@@ -65,7 +66,7 @@ func main() {
 	var err error
 
 	r := gin.Default()
-	r.POST("/webhook", handleWebhook)
+	r.GET("/webhook", handleWebhook)
 
 	if err = r.Run(); err != nil {
 		log.WithError(err).Fatal("Couldn't start server")

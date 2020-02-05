@@ -15,14 +15,19 @@ func newsStatement(n []CarouselItem) string {
 	return "Here's the latest cloud computing news."
 }
 
-func defaultNewsItem() CarouselItem {
-	return CarouselItem{
-		Title:       "No recent news",
-		Description: "Check back soon",
-		OpenURLAction: OpenURLAction{
-			URL: "https://aws.amazon.com/new",
-		},
+func defaultNewsItem() []CarouselItem {
+	var newsItems []CarouselItem
+	// Needs at minimium 2 items
+	for i := 1; i <= 2; i++ {
+		newsItems = append(newsItems, CarouselItem{
+			Title:       "No recent news",
+			Description: "Check back soon",
+			OpenURLAction: OpenURLAction{
+				URL: "https://aws.amazon.com/new",
+			},
+		})
 	}
+	return newsItems
 }
 
 func newsListItems() []CarouselItem {
@@ -30,7 +35,7 @@ func newsListItems() []CarouselItem {
 	news, _ := awsnews.ThisMonth()
 
 	if len(news) == 0 {
-		newsItems = append(newsItems, defaultNewsItem())
+		return defaultNewsItem()
 	}
 
 	for _, newsItem := range news {

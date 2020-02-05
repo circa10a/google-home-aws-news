@@ -18,7 +18,7 @@ func newsStatement(n []CarouselItem) string {
 func defaultNewsItem() CarouselItem {
 	return CarouselItem{
 		Title:       "No recent news",
-		Description: "",
+		Description: "Check back soon",
 		OpenURLAction: OpenURLAction{
 			URL: "https://aws.amazon.com/new",
 		},

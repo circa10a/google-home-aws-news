@@ -3,9 +3,10 @@
 [![Build Status](https://travis-ci.org/circa10a/google-home-aws-news.svg?branch=master)](https://travis-ci.org/circa10a/google-home-aws-news)
 [![Go Report Card](https://goreportcard.com/badge/github.com/circa10a/google-home-aws-news)](https://goreportcard.com/report/github.com/circa10a/google-home-aws-news)
 
-A webhook for google assistance integrations to provide the latest AWS news.
+A Google Assistant webhook integration to provide the latest AWS news.
 
-Deployed on Heroku at https://google-home-aws-news.herokuapp.com/webhook
+* [View details on Google](https://assistant.google.com/services/a/uid/0000006c6dc51de5)
+* Deployed on Heroku at https://google-home-aws-news.herokuapp.com/webhook
 
 _Powered by [go-aws-news](https://github.com/circa10a/go-aws-news)_
 

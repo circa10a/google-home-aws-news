@@ -6,8 +6,6 @@ github.com/andybalholm/cascadia v1.0.0 h1:hOCXnnZ5A+3eVDX8pvgl4kofXv2ELss0bKcqRy
 github.com/andybalholm/cascadia v1.0.0/go.mod h1:GsXiBklL0woXo1j/WYWtSYYC4ouU9PqHO0sqidkEA4Y=
 github.com/andybalholm/cascadia v1.1.0 h1:BuuO6sSfQNFRu1LppgbD25Hr2vLYW25JvxHs5zzsLTo=
 github.com/andybalholm/cascadia v1.1.0/go.mod h1:GsXiBklL0woXo1j/WYWtSYYC4ouU9PqHO0sqidkEA4Y=
-github.com/circa10a/go-aws-news v0.3.2 h1:zff7Z8zggBhQYOk89ZByUjVRfp43s2hxyDlb68PwisY=
-github.com/circa10a/go-aws-news v0.3.2/go.mod h1:rNN73n4M9E3k26gIB4RKXpRqiK+qEc7ThDCcV4+ZoRU=
 github.com/circa10a/go-aws-news v0.4.0 h1:BNfQGjiQo3KYBFlfaTF44BkWzWzZubrxyQGsO+xET+w=
 github.com/circa10a/go-aws-news v0.4.0/go.mod h1:rNN73n4M9E3k26gIB4RKXpRqiK+qEc7ThDCcV4+ZoRU=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=

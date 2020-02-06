@@ -2,13 +2,15 @@ package main
 
 import (
 	"net/http"
+	"time"
 
 	awsnews "github.com/circa10a/go-aws-news/news"
 	"github.com/gin-gonic/gin"
+	"github.com/patrickmn/go-cache"
 	log "github.com/sirupsen/logrus"
 )
 
-func newsStatement(n []CarouselItem) string {
+func defaultNewsStatement(n []CarouselItem) string {
 	if len(n) == 0 {
 		return "No cloud computing news yet."
 	}
@@ -30,10 +32,9 @@ func defaultNewsItem() []CarouselItem {
 	return newsItems
 }
 
-func newsListItems() []CarouselItem {
+func getNewsListItems() []CarouselItem {
 	newsItems := make([]CarouselItem, 0)
-	news, _ := awsnews.ThisMonth()
-
+	news := getNewsFromCache()
 	if len(news) == 0 {
 		return defaultNewsItem()
 	}
@@ -51,8 +52,8 @@ func newsListItems() []CarouselItem {
 	return newsItems
 }
 
-func buildFulfillment() *Response {
-	news := newsListItems()
+func fulfillment() *Response {
+	news := getNewsListItems()
 
 	return &Response{
 		Payload{
@@ -62,7 +63,7 @@ func buildFulfillment() *Response {
 					Items: []Item{
 						{
 							SimpleResponse: &SimpleResponse{
-								TextToSpeech: newsStatement(news),
+								TextToSpeech: defaultNewsStatement(news),
 							},
 						},
 						{
@@ -78,7 +79,43 @@ func buildFulfillment() *Response {
 }
 
 func handleWebhook(c *gin.Context) {
-	c.JSON(http.StatusOK, buildFulfillment())
+	c.JSON(http.StatusOK, fulfillment())
+}
+
+func getNewsFromCache() awsnews.Announcements {
+	news, found := Cache.Get(CacheKey)
+	if found {
+		return news.(awsnews.Announcements)
+	}
+	setNewsInCache()
+	return getNewsFromCache()
+}
+
+func setNewsInCache() {
+	news, err := awsnews.FetchYear(time.Now().Year())
+	log.Info("News fetched")
+	if err != nil {
+		log.Error(err)
+	}
+	Cache.Set(CacheKey, news.Last(10), cache.DefaultExpiration)
+	log.Info("Cache renewed")
+}
+
+var (
+	// Cache Global news cache
+	Cache *cache.Cache
+	// CacheKey references news items in the cache
+	CacheKey string
+	// DefaultExpiration expires cache after 8 hours
+	DefaultExpiration = 8 * time.Hour
+	// CleanupInterval purges expired items
+	CleanupInterval = 8 * time.Hour
+)
+
+func init() {
+	// Create cache on startup
+	Cache = cache.New(DefaultExpiration, CleanupInterval)
+	log.Info("Cache created")
 }
 
 func main() {

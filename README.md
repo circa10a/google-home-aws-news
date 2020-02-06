@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/circa10a/google-home-aws-news.svg?branch=master)](https://travis-ci.org/circa10a/google-home-aws-news)
 [![Go Report Card](https://goreportcard.com/badge/github.com/circa10a/google-home-aws-news)](https://goreportcard.com/report/github.com/circa10a/google-home-aws-news)
 
-A webhook for google assistance integrations to provide the latest AWS news
+A webhook for google assistance integrations to provide the latest AWS news.
 
 Deployed on Heroku at https://google-home-aws-news.herokuapp.com/webhook
 
@@ -12,6 +12,8 @@ _Powered by [go-aws-news](https://github.com/circa10a/go-aws-news)_
 ## Usage
 
 - "OK Google, Talk to cloud computing news"
+
+> Note: News items are cache for 8 hours, then renewed with another request
 
 ### Example View
 

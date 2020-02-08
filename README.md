@@ -28,12 +28,22 @@ _Powered by [go-aws-news](https://github.com/circa10a/go-aws-news)_
 | GIN MODE    | Runs web server in production or debug mode                           |`GIN_MODE`            | NONE                   | `false`  | `release`      |
 | PORT        | Port for web server to listen on                                      | `PORT`               | NONE                   | `false`  | `8080`         |
 
+## Metrics
+
+Prometheus metrics for usage are available at `/metrics`
+
 ## Development
+
+### Test
+
+```shell
+make
+```
 
 ### Build
 
 ```shell
-make
+make build
 ```
 
 ### Run

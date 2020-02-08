@@ -9,6 +9,8 @@ import (
 )
 
 var (
+	// G default gin engine
+	G = gin.Default()
 	// Cache Global news cache
 	Cache *cache.Cache
 	// CacheKey references news items in the cache
@@ -28,16 +30,14 @@ func init() {
 func main() {
 	// Err placeholder
 	var err error
-	// Create gin engine
-	r := gin.Default()
 	// Add prometheus middleware
-	promMiddleware(r)
+	promMiddleware(G)
 	// Start custom metrics counters
 	recordMetrics()
 	// Initialize paths and handlers in routes.go
-	routes(r)
+	routes(G)
 	// Handle the errrrrrrs
-	if err = r.Run(); err != nil {
+	if err = G.Run(); err != nil {
 		log.WithError(err).Fatal("Couldn't start server")
 	}
 }

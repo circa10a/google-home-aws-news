@@ -9,5 +9,8 @@ require (
 	github.com/golang/protobuf v1.3.3 // indirect
 	github.com/mattn/go-runewidth v0.0.8 // indirect
 	github.com/patrickmn/go-cache v2.1.0+incompatible
+	github.com/prometheus/client_golang v1.4.1
+	github.com/prometheus/common v0.9.1
 	github.com/sirupsen/logrus v1.4.2
+	github.com/zsais/go-gin-prometheus v0.1.0
 )

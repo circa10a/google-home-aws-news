@@ -14,7 +14,7 @@ _Powered by [go-aws-news](https://github.com/circa10a/go-aws-news)_
 
 - "OK Google, Talk to cloud computing news"
 
-> Note: News items are cache for 8 hours, then renewed with another request
+> Note: News items are cached for 8 hours, then renewed with another request
 
 ### Example View
 

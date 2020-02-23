@@ -19,6 +19,8 @@ var (
 	DefaultExpiration = 8 * time.Hour
 	// CleanupInterval purges expired items
 	CleanupInterval = 8 * time.Hour
+	// Version holds the semantic version of application to output
+	Version string
 )
 
 func init() {
@@ -30,6 +32,7 @@ func init() {
 func main() {
 	// Err placeholder
 	var err error
+	log.Infof("Version: %v", Version)
 	// Add prometheus middleware
 	promMiddleware(G)
 	// Start custom metrics counters

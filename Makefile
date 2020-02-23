@@ -2,17 +2,17 @@ GOCMD=go
 GOBUILD=$(GOCMD) build
 GOCLEAN=$(GOCMD) clean
 GORUN=$(GOCMD) run
-GOBUILDFLAGS=-ldflags="-s -w"
+GOBUILDFLAGS=-ldflags="-s -w -X main.Version=$(VERSION)"
 PROJECT=circa10a/google-home-aws-news
 BINARY=webhook
-VERSION=0.2.0
+VERSION=0.2.1
 
 # First target for travis ci
 test:
 	$(GOCMD) test -v ./...
 
 build:
-	$(GOBUILD) -o $(BINARY)
+	$(GOBUILD) $(GOBUILDFLAGS) -o $(BINARY)
 
 run:
 	$(GORUN) .

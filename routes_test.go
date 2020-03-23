@@ -6,7 +6,6 @@ import (
 	"testing"
 	"github.com/gavv/httpexpect"
 	"github.com/stretchr/testify/assert"
-	//"fmt"
 )
 
 func init() {
@@ -14,7 +13,7 @@ func init() {
 	promMiddleware(G)
 }
 
-func TestRulesEndpoint(t *testing.T) {
+func TestWebhookEndpoint(t *testing.T) {
 	// run server using httptest
 	server := httptest.NewServer(G)
 	defer server.Close()

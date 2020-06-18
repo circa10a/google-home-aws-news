@@ -19,7 +19,7 @@ require (
 	github.com/onsi/ginkgo v1.12.0 // indirect
 	github.com/onsi/gomega v1.9.0 // indirect
 	github.com/patrickmn/go-cache v2.1.0+incompatible
-	github.com/prometheus/client_golang v1.6.0
+	github.com/prometheus/client_golang v1.7.0
 	github.com/sergi/go-diff v1.1.0 // indirect
 	github.com/sirupsen/logrus v1.5.0
 	github.com/smartystreets/goconvey v1.6.4 // indirect

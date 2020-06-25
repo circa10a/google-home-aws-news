@@ -5,7 +5,7 @@ GORUN=$(GOCMD) run
 GOBUILDFLAGS=-ldflags="-s -w -X main.Version=$(VERSION)"
 PROJECT=circa10a/google-home-aws-news
 BINARY=webhook
-VERSION=0.2.3
+VERSION=0.2.4
 
 # First target for travis ci
 test:

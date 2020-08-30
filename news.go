@@ -8,7 +8,7 @@ func defaultNewsStatement(n []CarouselItem) string {
 	return "Here's the latest cloud computing news."
 }
 
-// There needs to be at minimum to items in the carousel or user gets an error
+// There needs to be a minimum of two items in the carousel or user gets an error
 func defaultNewsItem() []CarouselItem {
 	var newsItems []CarouselItem
 	for i := 1; i <= 2; i++ {

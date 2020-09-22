@@ -20,6 +20,8 @@ github.com/circa10a/go-aws-news v0.4.1 h1:/p2TAlDxhgizn/pgBQRTIDEXzcc4f3OGDkW5VZ
 github.com/circa10a/go-aws-news v0.4.1/go.mod h1:sGCY5FhUFHt6FEAaKPef2h8E9HXS4fM9aibogOlG4Hk=
 github.com/circa10a/go-aws-news v0.4.3 h1:AzHWiO4uqEYxtnV6W16iOoK4UgAaxQY8+r7ULBBDL+A=
 github.com/circa10a/go-aws-news v0.4.3/go.mod h1:e0k0ktmlLAZWj1tr67ye9WLlmZDleiqnx1MxRWnnaiQ=
+github.com/circa10a/go-aws-news v0.4.4 h1:f6iitYmQQ1JMJ8KcScAWUwcL3QxK2O0OevSQfLH/+b8=
+github.com/circa10a/go-aws-news v0.4.4/go.mod h1:e0k0ktmlLAZWj1tr67ye9WLlmZDleiqnx1MxRWnnaiQ=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=

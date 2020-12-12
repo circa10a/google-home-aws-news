@@ -1,6 +1,6 @@
 # google-home-aws-news
 
-[![Build Status](https://travis-ci.org/circa10a/google-home-aws-news.svg?branch=master)](https://travis-ci.org/circa10a/google-home-aws-news)
+[![Build Status](https://travis-ci.org/circa10a/google-home-aws-news.svg?branch=main)](https://travis-ci.org/circa10a/google-home-aws-news)
 [![Go Report Card](https://goreportcard.com/badge/github.com/circa10a/google-home-aws-news)](https://goreportcard.com/report/github.com/circa10a/google-home-aws-news)
 
 A Google Assistant webhook integration to provide the latest AWS news.
